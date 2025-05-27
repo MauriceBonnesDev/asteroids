@@ -38,6 +38,12 @@ def main():
                 print("Game over!")
                 sys.exit()
 
+        for ast in asteroids:
+            for bullet in shots:
+                if ast.check_collision(bullet):
+                    ast.kill()
+                    bullet.kill()
+
         screen.fill("black")
 
         for obj in drawable:
